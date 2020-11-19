@@ -1,3 +1,8 @@
+{% load static %}
+
+<link rel="stylesheet" type ="text/css" href="{% static 'tasks/style.css' %}">
+
+
 <p>Are you sure you want to delte "{{item}}"?</p>
 
 <a href="{% url 'list' %}">Cancel</a>

@@ -2,27 +2,31 @@
 
 <link rel="stylesheet" type ="text/css" href="{% static 'tasks/style.css' %}">
 
-<h3>To Do</h3>
+<div class="full_body">
+    <h1>To Do List</h1>
 
-<form method="POST" action="/">
-    {% csrf_token %}
-    {{form.title}}
-    <input type="submit" name="Create Task">
-</form>
+    <form method="POST" action="/">
+        {% csrf_token %}
+        {{form.title}}
+        <input type="submit" name="Create Task" placeholder="New Task...">
+    </form>
 
 
-{% for task in tasks %}
-    
-    <div>
-        <a href="{% url 'update_task' task.id %}">Update</a>
-        <a href="{% url 'delete' task.id %}">Delete</a>
+    <div class="allTasks">
+    {% for task in tasks %}
+        
+        <div class="task">
+            <a href="{% url 'update_task' task.id %}">Update</a>
+            <a href="{% url 'delete' task.id %}">Delete</a>
 
-        {% if task.complete == True %}
-        <strike>{{task}}</strike>
-        {% else %}
-            <span>{{task}}</span>
-        {% endif %}
+            {% if task.complete == True %}
+            <strike>{{task}}</strike>
+            {% else %}
+                <span>{{task}}</span>
+            {% endif %}
 
+        </div>
+
+    {% endfor %}
     </div>
-
-{% endfor %}
+</div>
