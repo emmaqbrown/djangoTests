@@ -2,13 +2,20 @@
 
 {% block content %}
 
-    <h2>Food</h2>
+{% for food in object_list %}
+<div class="container-fluid" id="food-card">
+    <!-- A fluid container that uses the full witdh -->
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ food }}</h4>
+            <p class="card-text">{{ food.quantity }}</p>
+            <p class="card-text">{{ food.pub_date }}</p>
+        </div>
+    </div>
+</div>
 
-    {% for food in object_list %}
-        <h4>{{ food }}</h4>
-        <p>{{ food.pub_date }}</p>
-        <p>{{ food.quantity }}</p>
-    {% endfor %}
+    
+{% endfor %}
 
 {% endblock %}
 

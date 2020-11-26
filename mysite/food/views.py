@@ -10,6 +10,6 @@ from .models import *
 class FoodList(ListView):
 
     template_name = 'food/foodList.html'
+    model = Food
 
-    def get_queryset(self):
-            return Food.objects.all()
+  
