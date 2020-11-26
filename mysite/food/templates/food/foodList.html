@@ -1,0 +1,14 @@
+{% extends "food/base.html" %}
+
+{% block content %}
+
+    <h2>Food</h2>
+
+    {% for food in object_list %}
+        <h4>{{ food }}</h4>
+        <p>{{ food.pub_date }}</p>
+        <p>{{ food.quantity }}</p>
+    {% endfor %}
+
+{% endblock %}
+

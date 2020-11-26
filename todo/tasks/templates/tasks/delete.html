@@ -2,12 +2,18 @@
 
 <link rel="stylesheet" type ="text/css" href="{% static 'tasks/style.css' %}">
 
+<div class = "delete-body"></div>
+    <div class="delete-task-frame">
 
-<p>Are you sure you want to delte "{{item}}"?</p>
+        <h1>Are you sure you want to delete: </h1>
+        <p>"{{item}}"?</p>
 
-<a href="{% url 'list' %}">Cancel</a>
+        <a href="{% url 'list' %}">Cancel</a>
 
-<form method="POST" action="">
-    {% csrf_token %}
-    <input type="submit" name="Confirm">
-</form>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="submit" name="Confirm">
+        </form>
+
+    </div>
+</div>

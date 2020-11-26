@@ -1,32 +1,60 @@
 {% load static %}
 
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" type ="text/css" href="{% static 'tasks/style.css' %}">
+
+    <title>To Do</title>
+  </head>
+  <body>
+    <div class="to-do-list">
+        <h1>To Do List</h1>
+    
+        <form method="POST" action="/">
+            {% csrf_token %}
+            {{form.title}}
+            <input type="submit"  placeholder="New Task..." class="btn btn-primary">
+        </form>
+    
+        <hr>
+    
+        <div class="all-task-frame">
+            {% for task in tasks %}
+                
+                <div class="single-task-frame-container">
+                <div class="single-task-frame-items">
+                    {% if task.complete == True %}
+                    <p id="completed-task">{{task}}</p>
+                    {% else %}
+                        <p>{{task}}</p>
+                    {% endif %}
+
+                    <a href="{% url 'update_task' task.id %}" >Update</a>
+                    <a href="{% url 'delete' task.id %}" >Delete</a>
+                </div>
+                </div>
+
+              
+          
+        
+    
+            {% endfor %}
+    
+        </div>
+    </div>
+
+    
+  </body>
+</html>
+
 <link rel="stylesheet" type ="text/css" href="{% static 'tasks/style.css' %}">
 
-<div class="full_body">
-    <h1>To Do List</h1>
-
-    <form method="POST" action="/">
-        {% csrf_token %}
-        {{form.title}}
-        <input type="submit" name="Create Task" placeholder="New Task...">
-    </form>
-
-
-    <div class="allTasks">
-    {% for task in tasks %}
-        
-        <div class="task">
-            <a href="{% url 'update_task' task.id %}">Update</a>
-            <a href="{% url 'delete' task.id %}">Delete</a>
-
-            {% if task.complete == True %}
-            <strike>{{task}}</strike>
-            {% else %}
-                <span>{{task}}</span>
-            {% endif %}
-
-        </div>
-
-    {% endfor %}
-    </div>
-</div>

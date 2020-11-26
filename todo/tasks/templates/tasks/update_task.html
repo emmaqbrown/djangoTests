@@ -2,12 +2,22 @@
 
 <link rel="stylesheet" type ="text/css" href="{% static 'tasks/style.css' %}">
 
+<div class ="update-body">
+    <div class="update-task-frame">
+        <h1>Update Task</h1>
 
-<h3>Update Task</h3>
+        <form method="POST" action="">
+            {% csrf_token %}
 
-<form method="POST" action="">
-    {% csrf_token %}
+            {{ form.title }}
+            <div class="form-checkbox">
+                {{ form.complete }}
+            </div>
+            <div class="form-update-submit">
+                <input type="submit" name="Update Task">
+            </div>
+        </form>
 
-    {{ form }}
-    <input type="submit" name="Update Task">
-</form>
+    </div>
+
+</div>
