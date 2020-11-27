@@ -1,5 +1,5 @@
 from django import forms 
-  from .models import Food 
+from .models import Food 
   
 # create a ModelForm 
 class FoodForm(forms.ModelForm): 
