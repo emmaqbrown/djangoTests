@@ -19,6 +19,15 @@ nav{
 
 #food-card-container{
     width: 250px;
+    margin-bottom: 50px;
+    /* border-color:  rgb(105, 135, 114); */
+    border-radius: 10px;
+    border-width: 2px;
+    /* filter: drop-shadow(0 0 0.05rem #505050); */
+}
+
+#food-card-container span{
+    font-weight: bold;
 }
 
 
@@ -36,6 +45,7 @@ nav{
 
 #form-container{
     width:300px;
+    
 }
 
 #form-card h4{
