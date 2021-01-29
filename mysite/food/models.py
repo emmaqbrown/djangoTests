@@ -10,6 +10,7 @@ class Food(models.Model):
     label =  models.CharField(max_length=30)
     pub_date = models.DateTimeField('Date Created',default=now, editable=False)    
     quantity = models.SmallIntegerField()
+    archive = models.BooleanField(default=False)
 
 
     def __str__(self):

@@ -1,0 +1,26 @@
+{% extends "food/base.html" %}
+
+
+{% block content %}
+
+<div class ="d-flex flex-row">
+<div class="p-2">
+<ul class="list-group">
+    {% for food in foods %}
+
+    <li class="list-group-item"> {{ food }} </li>
+
+    {% endfor %}
+
+      
+</ul>
+
+  {% include 'food/pagination.html' %}
+</div>
+</div>
+
+
+{% endblock %}
+
+
+

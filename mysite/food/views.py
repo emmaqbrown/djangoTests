@@ -14,6 +14,21 @@ class FoodList(ListView):
     paginate_by = 3
     context_object_name = 'foods'
 
+    def get_queryset(self):
+        #Filters archived foods out of main list 
+        return self.model.objects.filter(archive=False)
+
+class ArchivedFoodList(ListView):
+
+    template_name = 'food/archivedFoodList.html' 
+    model = Food
+    paginate_by = 12
+    context_object_name = 'foods'
+
+    def get_queryset(self):
+        #Filters archived foods out of main list 
+        return self.model.objects.filter(archive=True)
+
 
 class FoodForm(FormView):
     template_name = 'food/foodForm.html'

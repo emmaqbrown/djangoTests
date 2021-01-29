@@ -6,6 +6,7 @@ urlpatterns = [
     # path('', views.index),
     path('', views.FoodList.as_view(), name='food-list'),
     path('newfood/', views.FoodForm.as_view(), name='new-food'),
+    path('archivedfood/', views.ArchivedFoodList.as_view(),name='archived-food')
     # path('<int:pageno>/', views.FoodList.as_view(), name='food-list'),
 
 ]
