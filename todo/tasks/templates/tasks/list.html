@@ -19,10 +19,10 @@
     <div class="to-do-list">
         <h1>To Do List</h1>
     
-        <form method="POST" action="/">
+        <form method="POST" action="/" class="submit-form">
             {% csrf_token %}
             {{form.title}}
-            <input type="submit"  placeholder="New Task..." class="btn btn-primary">
+            <input type="submit"  placeholder="New Task..." >
         </form>
     
         <hr>

@@ -81,11 +81,11 @@ h1{
 
 .form-update-submit{
    float:right;
-} */
+} 
 
 
 input[type=text]{
-   background-color:  rgb(44, 68, 110);
+   background-color:  rgb(255, 255, 255);
    border: 2px solid;
    border-radius: 4px;
    border-color:  rgb(77, 139, 140);
@@ -93,7 +93,7 @@ input[type=text]{
    width: 75%;
    padding: 22px 10px 22px 10px;
    font-size: 16px;
-   filter: drop-shadow(0 0 0.1rem #505050);
+   filter: drop-shadow(0 0 0.05rem #505050);
 
 }
 
@@ -104,7 +104,7 @@ input[type=text]:focus {
  ::placeholder {
    color: rgb(159, 159, 159);
    opacity: 1; /* Firefox */
- } */
+ } 
 
 input[type=submit] {
    border: 2px solid;
@@ -122,7 +122,6 @@ input[type=submit] {
    margin-left: auto;
    margin-right: auto;
    filter: drop-shadow(0 0 0.05rem #505050);
-
    
  }
 
