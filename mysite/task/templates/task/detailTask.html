@@ -1,0 +1,21 @@
+{% extends "task/base.html" %}
+
+{% block content %}
+
+<div class ="d-flex justify-content-center">
+<div class="card" id="form-card">
+    <div class="card-body">
+      <h4 class="card-title">{{ task.label }}</h4>
+      
+        <!-- <div class="container"> -->
+          <p><span style="font-weight: bold;">Quantity: </span>{{ task.quantity }}</p>
+          <p><span style="font-weight: bold;">Notes: </span>{{ task.notes }}</p>
+
+        <!-- </div> -->
+    </div>
+  </div>
+</div>
+
+    
+{% endblock %}
+

@@ -1,4 +1,4 @@
-/* #food-card{
+/* #task-card{
     width: 25%;
     color: blue;
 } */
@@ -17,7 +17,7 @@ nav{
     margin-bottom: 50px;
 }
 
-#food-card-container{
+#task-card-container{
     width: 250px;
     margin-bottom: 50px;
     /* border-color:  rgb(105, 135, 114); */
@@ -26,10 +26,9 @@ nav{
     /* filter: drop-shadow(0 0 0.05rem #505050); */
 }
 
-#food-card-container span{
+#task-card-container span{
     font-weight: bold;
 }
-
 
 
 #form-card{
@@ -53,13 +52,23 @@ nav{
 }
 
 
-#form-container button{
+#form-container button, #task-card-container button{
     background-color: rgb(73, 128, 90);
     border-color: rgb(73, 128, 90);
+
 }
 
-#form-container button:hover{
+#form-container button:hover, #task-card-container button:hover{
     background-color: rgb(52, 91, 64);
     border-color: rgb(52, 91, 64);
 }
 
+#task-card-container a{
+    color: rgb(73, 128, 90);
+}
+
+
+ #task-card-container a:hover{
+    text-decoration: none;;
+    color: rgb(40, 74, 51);
+}

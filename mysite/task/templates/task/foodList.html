@@ -1,0 +1,37 @@
+{% extends "task/base.html" %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+    {% for task in tasks %}
+
+      <div class="col">
+          <div class="card" id="task-card-container">
+                <div class="card-header">
+                    <h4 class="card-title"><a href="{% url 'detail-task' pk=task.id  %}">{{ task }}</a></h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><span>Quantity: </span>{{ task.quantity }}</p>
+                    <p class="card-text"><span>Date Added: </span>:<br>{{ task.pub_date }}</p>
+                    <a href="{% url 'update-task' pk=task.id  %}">Update</a>
+                    <!-- <a href="{% url 'archive-task' pk=task.id %}">Archive</a> -->
+
+                  </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+      
+    </div>
+  </div>
+
+  {% include 'task/pagination.html' %}
+
+
+{% endblock %}
+
+
+
